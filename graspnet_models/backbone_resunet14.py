@@ -1,6 +1,6 @@
 import MinkowskiEngine as ME
 from MinkowskiEngine.modules.resnet_block import BasicBlock, Bottleneck
-from models.resnet import ResNetBase
+from graspnet_models.resnet import ResNetBase
 
 
 class MinkUNetBase(ResNetBase):

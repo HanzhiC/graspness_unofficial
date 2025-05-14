@@ -14,16 +14,16 @@ from __future__ import (
 import torch
 from torch.autograd import Function
 import torch.nn as nn
-import pytorch_utils as pt_utils
+import pointnet2.pt_utils as pt_utils
 import sys
 
 try:
     import builtins
 except:
-    import __builtin__ as builtins
+    import __builtin__ as builtins # type: ignore
 
 try:
-    import pointnet2._ext as _ext
+    import pointnet2._ext as _ext # type: ignore
 except ImportError:
     if not getattr(builtins, "__POINTNET2_SETUP__", False):
         raise ImportError(
