@@ -53,7 +53,7 @@ class GraspNet(nn.Module):
         objectness_pred = torch.argmax(objectness_score, 1)
         objectness_mask = (objectness_pred == 1)
         graspness_mask = graspness_score > GRASPNESS_THRESHOLD
-        graspable_mask = objectness_mask & graspness_mask
+        graspable_mask = graspness_mask # Disable objectness filter
 
         seed_features_graspable = []
         seed_xyz_graspable = []

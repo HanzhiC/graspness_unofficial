@@ -13,6 +13,7 @@ import torch
 import open3d as o3d
 from graspnetAPI.graspnet_eval import GraspGroup
 import json
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(ROOT_DIR)
 sys.path.append(os.path.join(ROOT_DIR, 'graspnet_utils'))
@@ -172,8 +173,9 @@ if __name__ == '__main__':
         pc = data_dict['point_clouds']
         gg = np.load(os.path.join(cfgs.dump_dir, cfgs.index + '.npy'))
         gg = GraspGroup(gg)
-        
-        import pdb; pdb.set_trace()
+
+        import pdb
+        pdb.set_trace()
         # gg = gg.nms()
         gg = gg.sort_by_score()
         if gg.__len__() > 30:
